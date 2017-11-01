@@ -88,7 +88,6 @@ disable_selinux(){
 check_sys(){
     local checkType=$1
     local value=$2
-
     local release=''
     local systemPackage=''
 
@@ -185,10 +184,11 @@ pre_install(){
         echo -e "[${red}Error${plain}] Your OS is not supported. please change OS to CentOS/Debian/Ubuntu and try again."
         exit 1
     fi
+
     # Set ShadowsocksR config password
     echo "Please enter password for ShadowsocksR:"
     #read -p "(Default password: teddysun.com):" shadowsockspwd
-    shadowsockspwd="qwer0.0."
+    shadowsockspwd="teddysun.com"
     [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
     echo
     echo "---------------------------"
@@ -382,12 +382,9 @@ config_shadowsocks(){
     "local_address":"127.0.0.1",
     "local_port":1080,
     "port_password":{
-    "2220":"12.2220",
-    "2221":"123.2221",
-    "2222":"1234.2222",
-    "2223":"12345.2223",
-    "2224":"123456.2224",
-    "2225":"1234567.2225"，
+        "8988":"password8988",
+        "8989":"password8989",
+        "8990":"password8990"
     },
     "timeout":300,
     "method":"aes-256-cfb",
